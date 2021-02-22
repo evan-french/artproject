@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import ImageTk, Image
 
 
 class Application(tk.Frame):
@@ -8,6 +9,7 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
         self.color_flag = False
+        self.image
 
     def create_widgets(self):
         self.hi_there = tk.Button(self)
@@ -15,6 +17,13 @@ class Application(tk.Frame):
         self.hi_there["fg"] = "green"
         self.hi_there["command"] = self.say_hi
         self.hi_there.pack(side="top")
+
+        self.spike = tk.Label(self)
+       #  self.spike['text'] = "Placeholder Image of a Space Cowboy"
+        self.image = ImageTk.PhotoImage(Image.open("spikeholder.png"))
+        self.spike['image'] = self.image
+        self.spike.pack(side="right")
+        
 
         self.quit = tk.Button(self, text="QUIT", fg="blue",
                               command=self.master.destroy)
@@ -24,7 +33,7 @@ class Application(tk.Frame):
         print("hi there, everyone!")
         if(self.color_flag):
            self.hi_there.config(fg="red")
-           self.quit.config(bg="black")
+           self.quit.config(bg="black") 
            self.color_flag = False
         else:
            self.hi_there.config(fg="black")
