@@ -35,10 +35,16 @@ class Application(tk.Frame):
            self.hi_there.config(fg="red")
            self.quit.config(bg="black") 
            self.color_flag = False
+           coord = 10, 10, 300, 300
+           arc = self.canvas.create_arc(coord, start=0,extent=150, fill='blue')
+           self.canvas.pack(side="left" )           
         else:
            self.hi_there.config(fg="black")
            self.quit.config(bg="red")
-           self.color_flag = True 
+           self.color_flag = True
+           coord = 10, 10, 300, 300
+           arc = self.canvas.create_arc(coord, start=0,extent=150, fill='green')
+           self.canvas.pack(side="left" )
 
  
 root = tk.Tk()
