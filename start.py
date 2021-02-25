@@ -1,6 +1,6 @@
 import tkinter as tk
 from PIL import ImageTk, Image
-c
+
 
 class Application(tk.Frame):
     def __init__(self, master=None):
@@ -9,7 +9,7 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
         self.color_flag = False
-        self.image
+
 
     def create_widgets(self):
         self.hi_there = tk.Button(self)
@@ -17,12 +17,12 @@ class Application(tk.Frame):
         self.hi_there["fg"] = "green"
         self.hi_there["command"] = self.say_hi
         self.hi_there.pack(side="top")
+        self.canvas = tk.Canvas(self, width=500, height=400, background='gray75')
+        coord = 10, 10, 300, 300
+        arc = self.canvas.create_arc(coord, start=0,extent=150, fill='red')
+        self.canvas.pack(side="left" )
 
-        self.spike = tk.Label(self)
-       #  self.spike['text'] = "Placeholder Image of a Space Cowboy"
-        self.image = ImageTk.PhotoImage(Image.open("spikeholder.png"))
-        self.spike['image'] = self.image
-        self.spike.pack(side="right")
+      
         
 
         self.quit = tk.Button(self, text="QUIT", fg="blue",
