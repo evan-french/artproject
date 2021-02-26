@@ -17,9 +17,13 @@ class Application(tk.Frame):
         self.hi_there["fg"] = "green"
         self.hi_there["command"] = self.say_hi
         self.hi_there.pack(side="top")
+
+        # Create the canvas widget 
         self.canvas = tk.Canvas(self, width=500, height=400, background='gray75')
-        coord = 10, 10, 300, 300
-        arc = self.canvas.create_arc(coord, start=0,extent=150, fill='red')
+        
+
+        #create the shape 
+        self.canvas.create_rectangle(100, 75, 400, 300, fill='white')
         self.canvas.pack(side="left" )
 
       
@@ -43,7 +47,7 @@ class Application(tk.Frame):
            self.quit.config(bg="red")
            self.color_flag = True
            coord = 10, 10, 300, 300
-           arc = self.canvas.create_arc(coord, start=0,extent=150, fill='green')
+           arc = self.canvas.create_arc(coord, start=0,extent=150, fill='green2')
            self.canvas.pack(side="left" )
 
  
