@@ -23,7 +23,13 @@ class Application(tk.Frame):
         
 
         #create the shape 
-        self.canvas.create_rectangle(100, 75, 400, 300, fill='white')
+        self.canvas.create_rectangle(100, 75, 400, 300, fill='red')
+        """ replace create lines with create polygon
+        self.canvas.create_line(100, 75, 150, 50)
+        self.canvas.create_line(150, 50, 350, 50)
+        self.canvas.create_line(350, 50, 400, 75)
+        """ 
+        self.canvas.create_polygon(100, 75, 150, 50, 350, 50, 400, 75, fill='#000', outline='red2')
         self.canvas.pack(side="left" )
 
       
