@@ -1,5 +1,5 @@
 import tkinter as tk
-from PIL import ImageTk, Image
+
 
 
 class Application(tk.Frame):
